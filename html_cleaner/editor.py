@@ -241,7 +241,7 @@ def on_js_message(handled, cmd, editor):
         if editor.note is None:
             return (True, None)
         idx = int(cmd[len("clean:") :])
-        editor.clean_field(idx)
+        clean_field(editor, idx)
         return (True, None)
     return handled
 gui_hooks.webview_did_receive_js_message.append(on_js_message)
